@@ -1,0 +1,33 @@
+.users {
+    height: auto;
+    max-height: 85vh;
+    overflow-y: scroll;
+}
+
+.messsges {
+    height: auto;
+    max-height: 80vh;
+    overflow-y: hidden;
+}
+
+.row_users_chat {
+    height: 80vh;
+}
+
+.row_messages {
+    height: 80vh;
+}
+
+.avatar:active {
+    background-color: rgb(167, 167, 167);
+}
+
+.avatar:hover {
+    background-color: rgb(167, 167, 167);
+    border-radius: 30px;
+}
+
+.avatar::after {
+    background-color: rgb(167, 167, 167);
+    border-radius: 30px;
+}
