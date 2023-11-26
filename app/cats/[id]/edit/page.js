@@ -45,18 +45,17 @@ export default function EditCat(props) {
                         <Box
                             component="form"
                             sx={{
-                                '& .MuiTextField-root': { m: 1, width: '48vh' },
+                                '& .MuiTextField-root': { m: 1, width: '50vh' },
                             }}
                             noValidate
                             autoComplete="off"
                         >
                             <Row>
-                                <Col xs={12} md={5} className='m-auto pe-4'>
+                                <Col xs={12} sm={12} md={6} className='m-auto'>
                                     <CardMedia
                                         component="img"
                                         alt={name}
-                                        height="100vh"
-                                        width="80%"
+                                        
                                         image={image}
                                         style={{ minHeight: 250, maxHeight: 250, minWidth: 180 }}
                                     />
@@ -118,8 +117,8 @@ export default function EditCat(props) {
                                     />
                                 </Col>
                             </Row>
-                            <Row className='m-auto'>
-                                <Col xs={2} className='m-auto'>
+                            <Row className='mb-3'>
+                                <Col xs={3} className='m-auto'>
                                     <InputFileUpload onChange={(file) => {
                                         setImageFile(file)
                                     }} /></Col>
@@ -137,7 +136,7 @@ export default function EditCat(props) {
                                             id: params.id
                                         }
                                     )}
-                                        className='mt-4 ms-5'>
+                                        className='m-auto'>
                                         Редактировать
                                     </Button>
                                 </Col>
