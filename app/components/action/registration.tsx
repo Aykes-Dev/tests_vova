@@ -1,6 +1,8 @@
+import { URL_API } from '../../settings';
+
 export default async function registration(username: any, password: any, email: any) {
     console.log(username, password, email)
-    const token = await fetch('http://localhost:8000/api/users/', {
+    const token = await fetch(`${URL_API}/api/users/`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

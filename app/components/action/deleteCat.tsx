@@ -1,8 +1,9 @@
 import logout from "./logout"
+import { URL_API } from '../../settings';
 
 export default async function deleteCats(props: any) {
     const token = localStorage.getItem('token')
-    const catsList = await fetch(`http://localhost:8000/api/cats/${props.id}/`, {
+    const catsList = await fetch(`${URL_API}/api/cats/${props.id}/`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',

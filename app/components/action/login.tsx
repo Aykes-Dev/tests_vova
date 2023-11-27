@@ -1,6 +1,8 @@
+import { URL_API } from '../../settings';
+
 export default async function singIn(username: any, password: any) {
     console.log(username, password)
-    const token = await fetch('http://localhost:8000/api/jwt/create/', {
+    const token = await fetch(`${URL_API}/api/jwt/create/`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

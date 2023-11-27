@@ -1,6 +1,8 @@
+import { URL_API } from '../../settings';
+
 export default async function createChat(props: any) {
     const token = localStorage.getItem('token')
-    const query = await fetch('http://localhost:8000/api/conversations/start/', {
+    const query = await fetch(`${URL_API}/api/conversations/start/`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

@@ -27,10 +27,10 @@ export default function CatInfo(props: any) {
     const editCat = (param: any, t: any) => {
         localStorage.setItem('name', t.name)
         localStorage.setItem('birth_year', t.birth_year)
-        localStorage.setItem('image', t.image)
         localStorage.setItem('color', t.color)
         localStorage.setItem('breed', t.breed)
         localStorage.setItem('history', t.history)
+        localStorage.setItem('image', t.image)
         window.location.replace(`/cats/${param.id}/edit`)
     }
 

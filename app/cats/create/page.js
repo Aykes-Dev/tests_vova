@@ -106,7 +106,7 @@ export default function CreateCat(props) {
                             </Row>
                             <Row className='m-auto'>
                                 <Col xs={2} className='m-auto'>
-                                    <InputFileUpload onChange={(file) => {
+                                    <InputFileUpload onChange={file => {
                                         setImageFile(file)
                                     }} /></Col>
                             </Row>

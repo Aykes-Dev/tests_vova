@@ -17,10 +17,9 @@ export default function EditCat(props) {
     const [color, setColor] = useState(localStorage.getItem('color'))
     const [breed, setBreed] = useState(localStorage.getItem('breed'))
     const [history, setHistory] = useState(localStorage.getItem('history'))
-    const [image, setImageFile] = useState(localStorage.getItem('image'))
+    const [image, setImageFile] = useState(localStorage.getItem('image') || undefined)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const params = useParams()
-
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -30,6 +29,7 @@ export default function EditCat(props) {
             redirect('/')
         }
     }, []);
+    console.log(name)
     return (
         <main className="items-center justify-between vh-100">
             <NavBar auth={isAuthenticated} />
@@ -45,17 +45,18 @@ export default function EditCat(props) {
                         <Box
                             component="form"
                             sx={{
-                                '& .MuiTextField-root': { m: 1, width: '50vh' },
+                                '& .MuiTextField-root': { m: 1, width: '48vh' },
                             }}
                             noValidate
                             autoComplete="off"
                         >
                             <Row>
-                                <Col xs={12} sm={12} md={6} className='m-auto'>
+                                <Col xs={12} md={5} className='m-auto pe-4'>
                                     <CardMedia
                                         component="img"
                                         alt={name}
-                                        
+                                        height="100vh"
+                                        width="80%"
                                         image={image}
                                         style={{ minHeight: 250, maxHeight: 250, minWidth: 180 }}
                                     />
@@ -117,8 +118,8 @@ export default function EditCat(props) {
                                     />
                                 </Col>
                             </Row>
-                            <Row className='mb-3'>
-                                <Col xs={3} className='m-auto'>
+                            <Row className='m-auto'>
+                                <Col xs={2} className='m-auto'>
                                     <InputFileUpload onChange={(file) => {
                                         setImageFile(file)
                                     }} /></Col>
@@ -136,7 +137,7 @@ export default function EditCat(props) {
                                             id: params.id
                                         }
                                     )}
-                                        className='m-auto'>
+                                        className='mt-4 ms-5'>
                                         Редактировать
                                     </Button>
                                 </Col>

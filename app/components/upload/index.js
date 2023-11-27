@@ -36,7 +36,7 @@ export default function InputFileUpload({onChange, file=null}) {
             console.log('Error: ', error);
         }
     }
-    //console.log(currentFile)
+
     return (
         <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
             Загрузить изображение

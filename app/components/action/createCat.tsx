@@ -1,6 +1,8 @@
+import { URL_API } from '../../settings';
+
 export default async function createCat(props: any) {
     const token = localStorage.getItem('token')
-    const query = await fetch('http://localhost:8000/api/cats/', {
+    const query = await fetch(`${URL_API}/api/cats/`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

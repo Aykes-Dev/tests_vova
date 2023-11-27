@@ -1,8 +1,8 @@
-import logout from "./logout"
+import { URL_API } from '../../settings';
 
 export default async function getChatsList() {
     const token = localStorage.getItem('token')
-    const chatsList = await fetch('http://localhost:8000/api/conversations/', {
+    const chatsList = await fetch(`${URL_API}/api/conversations/`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',

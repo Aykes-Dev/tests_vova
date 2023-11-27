@@ -1,6 +1,8 @@
+import { URL_API } from '../../settings';
+
 export default async function getMessage(props: any) {
     const token = localStorage.getItem('token')
-    const chatsList = await fetch(`http://localhost:8000${props}`, {
+    const chatsList = await fetch(`${URL_API}${props}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',

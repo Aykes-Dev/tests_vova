@@ -1,22 +1,27 @@
 'use client'
 
 import * as React from 'react';
-import { redirect } from 'next/navigation';
 import NavBar from '../components/navbar/NavBar'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import InputFileUpload from '@/app/components/upload';
-import createCat from '@/app/components/action/createCat';
 import registration from '../components/action/registration';
 
-export default function CreateCat(props: any) {
+export default function CreateCat() {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [retryPassword, setPetryPassword] = useState('')
     const [email, setEmail] = useState('')
     const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    const verifyOrRegistration = (name: any, password: any, retryPassword: any, email: any) => {
+        if (password === retryPassword) {
+            registration(name, password, email)
+        }else {
+            alert('Пароли не совпадают.')
+        }
+    }
 
     return (
         <main className="items-center justify-between vh-100">
@@ -84,9 +89,10 @@ export default function CreateCat(props: any) {
                             </Row>                                  
                             <Row>
                                 <Col xs={2} className='m-auto'>
-                                    <Button onClick={() => registration(
+                                    <Button onClick={() => verifyOrRegistration(
                                         name,
                                         password,
+                                        retryPassword,
                                         email
                                     )}
                                         className='mt-4 ms-5'>

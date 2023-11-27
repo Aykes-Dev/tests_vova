@@ -1,11 +1,9 @@
-import logout from "./logout"
+import logout from "./logout";
+import { URL_API } from '../../settings';
 
 export default async function getCats(props: any) {
     const token = localStorage.getItem('token')
-    if (props !== 'undefined') {
-        console.log(props)
-    }
-    const catsList = await fetch(`http://localhost:8000${props}`, {
+    const catsList = await fetch(`${URL_API}${props}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
